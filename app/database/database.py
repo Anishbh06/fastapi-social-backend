@@ -1,16 +1,18 @@
 from sqlalchemy import create_engine
 from sqlalchemy.orm import sessionmaker, declarative_base
 from sqlalchemy.engine import URL
-from app.core.config import (DB_SERVER,DB_NAME,DB_USERNAME,DB_PASSWORD,DB_DRIVER,)
+
+from app.core.config import settings
+
 
 connection_url = URL.create(
     "mssql+pyodbc",
-    username=DB_USERNAME,
-    password=DB_PASSWORD,
-    host=DB_SERVER,
-    database=DB_NAME,
+    username=settings.db_username,
+    password=settings.db_password,
+    host=settings.db_server,
+    database=settings.db_name,
     query={
-        "driver": DB_DRIVER,
+        "driver": settings.db_driver,
         "TrustServerCertificate": "yes",
     },
 )
@@ -27,4 +29,3 @@ SessionLocal = sessionmaker(
 )
 
 Base = declarative_base()
-
