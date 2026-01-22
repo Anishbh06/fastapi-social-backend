@@ -17,15 +17,8 @@ connection_url = URL.create(
     },
 )
 
-engine = create_engine(
-    connection_url,
-    pool_pre_ping=True,
-)
+engine = create_engine(connection_url,pool_pre_ping=True,)
 
-SessionLocal = sessionmaker(
-    autocommit=False,
-    autoflush=False,
-    bind=engine,
-)
+SessionLocal = sessionmaker(autocommit=False,autoflush=False,bind=engine,)
 
 Base = declarative_base()

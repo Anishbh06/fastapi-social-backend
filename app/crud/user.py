@@ -9,10 +9,7 @@ from fastapi import HTTPException, status
 def create_user(db: Session, user_in: UserCreate) -> User:
     hashed = hash_password(user_in.password)
 
-    user = User(
-        email=user_in.email,
-        hashed_password=hashed
-    )
+    user = User(email=user_in.email,hashed_password=hashed)
 
     db.add(user)
     try:
