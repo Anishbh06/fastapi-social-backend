@@ -111,7 +111,7 @@ app/
 ### 1️⃣ Clone the repository
 
 ```bash
-git clone <your-repo-url>
+git clone https://github.com/Anishbh06/fastapi-social-backend.git
 cd fastapi-social-backend
 ```
 
