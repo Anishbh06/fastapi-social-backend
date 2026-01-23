@@ -9,6 +9,9 @@ from app.crud.post import create_post, get_posts, get_my_posts, delete_post
 from app.core.security import get_current_user
 from app.models.user import User
 from app.database.deps import get_db
+from app.schemas.post import PostUpdate
+from app.crud.post import update_post
+
 
 
 router = APIRouter(prefix="/posts", tags=["Posts"])
@@ -44,6 +47,22 @@ def read_my_posts(
         skip=skip,
         limit=limit,
     )
+
+
+@router.put("/{post_id}", response_model=PostResponse)
+def edit_post(
+    post_id: int,
+    post: PostUpdate,
+    db: Session = Depends(get_db),
+    current_user: User = Depends(get_current_user),
+):
+    return update_post(
+        db=db,
+        post_id=post_id,
+        post_in=post,
+        user_id=current_user.id,
+    )
+
 
 @router.delete("/{post_id}", status_code=status.HTTP_204_NO_CONTENT)
 def delete_own_post(

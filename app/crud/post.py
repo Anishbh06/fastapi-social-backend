@@ -1,6 +1,7 @@
 from sqlalchemy.orm import Session
 from app.models.post import Post
-from app.schemas.post import PostCreate
+from app.schemas.post import PostCreate, PostUpdate
+from fastapi import HTTPException, status
 
 def create_post(db: Session, post_in: PostCreate, owner_id: int) -> Post:
     post = Post(
@@ -37,6 +38,38 @@ def get_my_posts(
         .limit(limit)
         .all()
     )
+
+
+def update_post(
+    db: Session,
+    post_id: int,
+    post_in: PostUpdate,
+    user_id: int,
+):
+    post = db.query(Post).filter(Post.id == post_id).first()
+
+    if not post:
+        raise HTTPException(
+            status_code=status.HTTP_404_NOT_FOUND,
+            detail="Post not found",
+        )
+
+    if post.owner_id != user_id:
+        raise HTTPException(
+            status_code=status.HTTP_403_FORBIDDEN,
+            detail="Not authorized to update this post",
+        )
+
+    if post_in.title is not None:
+        post.title = post_in.title
+
+    if post_in.content is not None:
+        post.content = post_in.content
+
+    db.commit()
+    db.refresh(post)
+    return post
+
 
 def delete_post(db: Session, post_id: int, user_id: int) -> Post | None:
     post = (

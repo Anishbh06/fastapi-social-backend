@@ -1,6 +1,7 @@
 from pydantic import BaseModel
 from datetime import datetime
 from pydantic import ConfigDict
+from typing import Optional
 
 class PostCreate(BaseModel):
     title: str
@@ -15,3 +16,8 @@ class PostResponse(BaseModel):
     created_at: datetime
 
     model_config = ConfigDict(from_attributes=True)
+
+
+class PostUpdate(BaseModel):
+    title: Optional[str] = None
+    content: Optional[str] = None
