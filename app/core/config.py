@@ -1,18 +1,15 @@
+# app/core/config.py
 from pydantic_settings import BaseSettings, SettingsConfigDict
 
 
 class Settings(BaseSettings):
-    # Database
-    db_server: str
-    db_name: str
-    db_username: str
-    db_password: str
-    db_driver: str
+    # Use a single DATABASE_URL for portability
+    DATABASE_URL: str
 
     # Security
-    secret_key: str
-    algorithm: str 
-    access_token_expire_minutes: int 
+    SECRET_KEY: str
+    ALGORITHM: str
+    ACCESS_TOKEN_EXPIRE_MINUTES: int
 
     model_config = SettingsConfigDict(
         env_file=".env",
