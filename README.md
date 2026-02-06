@@ -1,8 +1,3 @@
-
-
----
-
-````markdown
 # 🚀 Social Media Backend API (FastAPI)
 
 A production-ready backend API for a social media application built using **FastAPI**.  
@@ -19,6 +14,8 @@ This project is designed to reflect **real-world backend development practices**
 ✅ Alembic migrations created and applied  
 ✅ Dockerized and deployed  
 ✅ Tested via Swagger & live API calls  
+✅ Ownership-based authorization enforced
+
 
 **Project is complete and deployment-ready.**
 
@@ -64,7 +61,13 @@ This project is designed to reflect **real-world backend development practices**
 - **Containerization:** Docker
 
 ---
+Got it 👍
+The **problem is only the formatting break after `alembic/`**.
+Below is a **clean, correctly formatted, copy-paste–ready replacement** for that entire section.
 
+👉 **Replace everything from `## 📂 Project Structure` till the auth flow ends** with this:
+
+````markdown
 ## 📂 Project Structure
 
 ```text
@@ -93,13 +96,11 @@ app/
 └── alembic/              # Database migrations
 ````
 
----
-
 ## 🔑 Authentication Flow
 
 1. User logs in using `/auth/login`
 2. Server issues a JWT access token
-3. Client sends the token in:
+3. Client sends the token in the request header:
 
 ```http
 Authorization: Bearer <token>
@@ -108,7 +109,6 @@ Authorization: Bearer <token>
 4. Token is validated and the user is loaded via dependency injection
 5. Protected routes automatically receive the authenticated user
 
----
 
 ## ▶️ Running Locally (Without Docker)
 
@@ -217,5 +217,4 @@ Built as a portfolio-grade backend project.
 **Anish**
 Software Engineer
 
-```
 
