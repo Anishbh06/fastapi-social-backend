@@ -29,6 +29,19 @@ All endpoints can be tested directly via the live Swagger interface.
 
 ---
 
+## Live API Testing (Postman)
+
+Public Postman collection:
+👉 https://www.postman.com/technical-participant-84645882/social-media-backend-fastapi/collection/40622863-8a748c04-e1bf-4410-a82e-10ad5700c67d/
+
+### How to use
+1. Open the Postman link above
+2. Click **Run in Postman** or **Fork Collection**
+3. Set environment variable:
+   - `url = http://127.0.0.1:8000`
+4. Run **Login** API (JWT token is auto-saved)
+5. Test authenticated endpoints (Create Post, Get Posts, Update/Delete)
+
 ## 🛠 Features
 
 ### 🔐 Authentication & Security
