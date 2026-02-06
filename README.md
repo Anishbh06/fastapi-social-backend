@@ -3,7 +3,7 @@
 A production-ready backend API for a social media application built using **FastAPI**.  
 Implements secure authentication, ownership-based authorization, database migrations, Dockerized deployment, and cloud hosting.
 
-This project is designed to reflect **real-world backend development practices**, not tutorial-level code.
+This project is designed to reflect **real-world backend development practices**.
 
 ---
 
@@ -17,7 +17,15 @@ This project is designed to reflect **real-world backend development practices**
 ✅ Ownership-based authorization enforced
 
 
-**Project is complete and deployment-ready.**
+**Project is complete and deployed.**
+
+## 🌐 Live API Documentation
+
+Swagger UI (Live):
+👉 https://fastapi-social-backend-ivjy.onrender.com/docs
+
+The API is fully deployed and publicly accessible.  
+All endpoints can be tested directly via the live Swagger interface.
 
 ---
 
