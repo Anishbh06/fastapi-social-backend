@@ -58,7 +58,7 @@ def get_current_user(
             settings.SECRET_KEY,
             algorithms=[settings.ALGORITHM],
         )
-        user_id = payload.get("user_id")
+        user_id = payload.get("sub")
         if user_id is None:
             raise credentials_exception
     except JWTError:
