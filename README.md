@@ -29,6 +29,9 @@ All endpoints can be tested directly via the live Swagger interface.
 
 ---
 
+## Live Demo
+Watch a short demo: https://www.loom.com/share/88107d4d032047a78b65e2ef4b7ddc4a
+
 ## Live API Testing (Postman)
 
 Public Postman collection:
