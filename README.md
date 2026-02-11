@@ -85,13 +85,20 @@ Public Postman collection:
 - **Containerization:** Docker
 
 ---
-Got it 👍
-The **problem is only the formatting break after `alembic/`**.
-Below is a **clean, correctly formatted, copy-paste–ready replacement** for that entire section.
 
-👉 **Replace everything from `## 📂 Project Structure` till the auth flow ends** with this:
+# ⚡ 5-Minute Local Setup (Docker Recommended)
 
-````markdown
+This project is fully Dockerized and can be run locally without installing PostgreSQL.
+
+## 🚀 Quick Start (Recommended)
+
+```bash
+git clone https://github.com/Anishbh06/fastapi-social-backend.git
+cd fastapi-social-backend
+cp .env.example .env
+docker-compose up --build
+````
+---
 ## 📂 Project Structure
 
 ```text
